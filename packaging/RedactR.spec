@@ -4,7 +4,8 @@ import os
 
 ROOT = os.path.abspath(os.path.join(SPECPATH, ".."))
 
-DATAS = [(os.path.join(ROOT, "redactr", "assets"), "redactr/assets")]
+DATAS = [(os.path.join(ROOT, "redactr", "assets"), "redactr/assets"),
+         (os.path.join(ROOT, "LICENSE"), "."), (os.path.join(ROOT, "THIRD_PARTY_NOTICES.md"), ".")]
 # Bundled OCR engine (prepared by packaging\prepare_tesseract.py). Unpacked next to the app at run time.
 TESS = os.path.join(SPECPATH, "tesseract")
 if os.path.isfile(os.path.join(TESS, "tesseract.exe")):

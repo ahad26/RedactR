@@ -135,6 +135,16 @@ You can pass the vault password with `--password` or the `REDACTR_PASSWORD` envi
 ```
 This creates made-up confidential sample files in `samples\input`.
 
+## License
+
+ЯedactR is free software, licensed under the **GNU Affero General Public License v3.0**. See [LICENSE](LICENSE).
+You may use, study, share and modify it. If you distribute it, or a modified version, you must make the
+source code available under the same licence.
+Copyright © 2026 Ahad.
+
+The portable builds bundle open-source components (PyMuPDF, Tesseract OCR, Python and others), each under its own
+licence. They are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 ## Author
 
 ЯedactR was created by **Ahad** ([github.com/ahad26](https://github.com/ahad26)).

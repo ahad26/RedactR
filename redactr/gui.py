@@ -11,7 +11,7 @@ import tkinter as tk
 import traceback
 from tkinter import filedialog, messagebox, simpledialog, ttk
 
-from . import APP_NAME, AUTHOR, AUTHOR_URL, __version__, config, formats, ocr, splash
+from . import APP_NAME, AUTHOR, AUTHOR_URL, LICENSE_NAME, SOURCE_URL, __version__, config, formats, ocr, splash
 from .categories import CATEGORIES, CATEGORY_ORDER
 from .levels import LEVELS, REALISTIC, TOKEN, Profile
 from .pipeline import SanitizeJob, restore_file, restore_text
@@ -595,7 +595,8 @@ class App(tk.Tk):
             "   - If the AI changes a fictional name (e.g. only uses a nickname) it may not be restored - check the result.\n"
             "   - Realistic replacements of money/dates are never used: those become placeholders so totals stay restorable.")
         ttk.Label(p, text=help_text, style="Panel.TLabel", justify="left").pack(anchor="w", pady=(4, 0))
-        ttk.Label(p, text=f"{APP_NAME} {__version__} - runs entirely on this computer.  Software by {AUTHOR} - {AUTHOR_URL}", style="Muted.TLabel").pack(anchor="w", pady=(14, 0))
+        ttk.Label(p, text=f"{APP_NAME} {__version__} - runs entirely on this computer.  Software by {AUTHOR} - {AUTHOR_URL}\n"
+                          f"Free software under the {LICENSE_NAME}; source code and licence: {SOURCE_URL}  (LICENSE and THIRD_PARTY_NOTICES.md are included with the app)", style="Muted.TLabel", justify="left").pack(anchor="w", pady=(14, 0))
         self._update_ocr_status()
 
     # ================================================================== project
