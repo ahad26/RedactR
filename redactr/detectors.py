@@ -195,7 +195,10 @@ class Detector:
 
         # custom terms are always looked for when the user listed them
         for term, cat in self.custom_terms:
-            for m in re.finditer(r"(?<!\w)" + re.escape(term).replace(r"\ ", r"\s+") + r"(?!\w)", text, re.I):
+            # not inside an email address or web domain ("Globex" must not split michael@globex.com),
+            # so the whole address is still detected and replaced as one
+            for m in re.finditer(r"(?<![\w@.\-])" + re.escape(term).replace(r"\ ", r"\s+") + r"(?![\w\-@]|\.[A-Za-z])",
+                                 text, re.I):
                 found.append(Detection(m.start(), m.end(), m.group(0), cat, "custom-term", 95))
         for label, rx in self.custom_patterns:
             for m in rx.finditer(text):

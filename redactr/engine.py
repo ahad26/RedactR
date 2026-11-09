@@ -62,6 +62,8 @@ class Replacer:
             if (found.isupper() and not original.isupper() and len(found) > 1
                     and not repl.startswith("[")):
                 repl = repl.upper()
+            elif found.islower() and not original.islower() and not repl.startswith("["):
+                repl = repl.lower()   # e.g. the company name inside an email / web address
             out.append((m.start(), m.end(), repl, k))
         return out
 

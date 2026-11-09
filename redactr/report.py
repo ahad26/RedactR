@@ -9,7 +9,7 @@ import os
 from collections import Counter
 from datetime import datetime
 
-from . import APP_NAME, __version__
+from . import APP_NAME, AUTHOR, AUTHOR_URL, __version__
 from .categories import CATEGORIES
 
 
@@ -92,7 +92,7 @@ never upload it to an AI tool. Upload only the files in the <i>sanitized</i> fol
 <h2>What was removed and what replaced it</h2>
 <table><tr><th>Original (removed)</th><th>Category</th><th>Replaced with</th><th>Times</th><th>Files</th></tr>{find_rows}</table>
 {('<h2>Kept unchanged (you un-ticked these)</h2><ul>' + excl_rows + '</ul>') if excluded else ''}
-<p><small>Generated locally by {APP_NAME} {__version__}. Mapping vault: {e(project.vault_path)}
+<p><small>Generated locally by {APP_NAME} {__version__} - software by {AUTHOR} (<a href="https://{AUTHOR_URL}">{AUTHOR_URL}</a>). Mapping vault: {e(project.vault_path)}
 {'(password protected)' if project.password else '(not password protected)'}.</small></p>
 </body></html>"""
     with open(base_path + ".html", "w", encoding="utf-8") as fh:

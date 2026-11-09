@@ -1,6 +1,23 @@
 # ЯedactR
 
+*Software by **Ahad** ([github.com/ahad26](https://github.com/ahad26))*
+
 **Clean confidential documents on your own computer before you upload them to an AI chatbot, then put the real values back into the AI's answer.**
+
+### ⬇ [Download the latest release](https://github.com/ahad26/RedactR/releases/latest)
+
+Windows 10/11 - no installation, no admin rights, OCR included:
+
+- **[RedactR.exe](https://github.com/ahad26/RedactR/releases/latest/download/RedactR.exe)**: one portable file. Double-click it to start (it opens in about 15 s).
+- **[RedactR-Fast.zip](https://github.com/ahad26/RedactR/releases/latest/download/RedactR-Fast.zip)**: the fast-start version (opens in about 1 s). Unzip it, then run `RedactR-Fast\RedactR.exe`.
+
+Windows SmartScreen may warn the first time, because the app isn't code-signed. Choose *More info → Run anyway*.
+
+### ▶ See it in action
+
+[![Watch the 1-minute ЯedactR demo](demo/poster.jpg)](https://github.com/ahad26/RedactR/blob/main/demo/RedactR-demo.mp4)
+
+*Click the picture to play the 1-minute video. It shows sanitizing Word, Excel, PowerPoint, PDF, a scanned PDF and a screenshot, the five levels, and how an AI's answer is restored to the real names.*
 
 ЯedactR is a Windows desktop app. It does not run in a browser, it has no server and it makes no network calls. Detection, replacement, OCR, encryption and restoring all happen on this PC.
 
@@ -117,3 +134,8 @@ You can pass the vault password with `--password` or the `REDACTR_PASSWORD` envi
 .venv\Scripts\python samples\make_samples.py
 ```
 This creates made-up confidential sample files in `samples\input`.
+
+## Author
+
+ЯedactR was created by **Ahad** ([github.com/ahad26](https://github.com/ahad26)).
+Questions, ideas and bug reports are welcome: please [open an issue](https://github.com/ahad26/RedactR/issues) on this repository.

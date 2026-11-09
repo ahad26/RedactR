@@ -6,7 +6,8 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-W, H = 620, 340
+W, H = 620, 372
+CREDIT = "Software by Ahad  ·  github.com/ahad26"
 MIDNIGHT, DUSK, GOLD, CORAL, INK, MUTED = "#312C51", "#48426D", "#F0C38E", "#F1AA9B", "#F7F4FB", "#C9C3E3"
 
 
@@ -24,7 +25,7 @@ img = Image.new("RGB", (W, H), MIDNIGHT)
 d = ImageDraw.Draw(img)
 
 # card
-d.rounded_rectangle([18, 18, W - 18, H - 62], radius=26, fill=DUSK)
+d.rounded_rectangle([18, 18, W - 18, 278], radius=26, fill=DUSK)
 
 # logo tile (same motif as the app icon)
 d.rounded_rectangle([46, 50, 186, 190], radius=30, fill=MIDNIGHT)
@@ -54,8 +55,13 @@ for label, col in chips:
     cx += tw + 34
 
 # loading strip (text is written over this area at run time)
-d.rounded_rectangle([34, H - 46, 40, H - 40], radius=3, fill=GOLD)   # status bullet next to the live text
-d.line([34, H - 14, W - 34, H - 14], fill=DUSK, width=2)
+d.rounded_rectangle([34, 294, 40, 300], radius=3, fill=GOLD)   # status bullet next to the live text
+d.line([34, 318, W - 34, 318], fill=DUSK, width=2)
+
+# footer credit
+fcr = font(12)
+tw = d.textlength(CREDIT, font=fcr)
+d.text(((W - tw) / 2, 332), CREDIT, font=fcr, fill=MUTED)
 
 img.save(os.path.join(HERE, "splash.png"))
 print("splash written")

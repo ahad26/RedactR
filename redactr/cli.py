@@ -12,7 +12,7 @@ import getpass
 import os
 import sys
 
-from . import APP_NAME
+from . import APP_NAME, AUTHOR, AUTHOR_URL
 from .pipeline import SanitizeJob, restore_file, restore_text
 from .project import Project
 from .vault import VaultError
@@ -48,7 +48,8 @@ def main(argv=None):
             stream.reconfigure(encoding="utf-8", errors="replace")  # Windows consoles default to cp1252
         except (AttributeError, ValueError):
             pass
-    ap =argparse.ArgumentParser(prog="redactr", description=f"{APP_NAME} - local document sanitizer")
+    ap =argparse.ArgumentParser(prog="redactr", description=f"{APP_NAME} - local document sanitizer",
+                                 epilog=f"Software by {AUTHOR} - {AUTHOR_URL}")
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("sanitize", help="create sanitized copies")
     s.add_argument("files", nargs="+")
